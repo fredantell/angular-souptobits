@@ -2,16 +2,16 @@
 
     <section class="row well live-preview">
         <aside class="col-sm-3">
-            <a href="http://www.amazon.com/gp/product/0553593714">
-                <img ng-src="http://images.amazon.com/images/P/0553593714.01.ZTZZZZZZ.jpg" alt="Cover of BOOK TITLE" class="full">
+            <a href="http://www.amazon.com/gp/product/{{book.isbn}}">
+                <img ng-src="http://images.amazon.com/images/P/{{book.isbn}}.01.ZTZZZZZZ.jpg" alt="Cover of BOOK TITLE" class="full">
             </a>
-            <p>BOOK RATING/5</p>
+            <p>{{book.rating}}/5</p>
         </aside>
 
         <div class="col-sm-9">
             <h3>
                 <a href="http://www.amazon.com/gp/product/0553593714">
-                    BOOK TITLE
+                    BOOKdddd TITLE
                 </a>
             </h3>
             <cite class="text-muted">Written by BOOK AUTHOR</cite>

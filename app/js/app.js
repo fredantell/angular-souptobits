@@ -13,20 +13,41 @@ app.controller('ReviewFormController', function(BookDataService) {
 app.controller('ReadingListController', function(BookDataService) {
     this.books = BookDataService.getBooks();
     this.genres = BookDataService.getGenres();
-    this.showForm = false;
 
 });
 
 app.directive('reviewForm', function() {
 
-    var controller = function() {};
+    var controller = function() {
+        this.showForm = false;
+    };
     var linker = function() {};
 
     return {
         restrict: 'E',
         templateUrl: 'partials/review-form.html',
         controller: controller,
-        controllerAs: 'reviewFormCtrl'
+        controllerAs: 'reviewFormCtrl',
+        scope: {
+            books: '=',
+            genres: '='
+        }
+    };
+});
+
+app.directive('bookGenres', function() {
+
+    return {
+        restrict: 'E',
+        templateUrl: 'partials/book-genres.html'
+    };
+});
+
+app.directive('bookCover', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'partials/book-cover.html',
+        replace: true
     };
 });
 
