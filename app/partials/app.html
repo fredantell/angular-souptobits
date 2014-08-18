@@ -8,22 +8,22 @@
     <hr />
 
     <ul class="list-unstyled col-sm-8">
-        <li class="book row">
+        <li class="book row" ng-repeat="book in readingListCtrl.books">
             <!--<book-cover></book-cover>-->
             <aside class="col-sm-3">
 
-                <a href="http://www.amazon.com/gp/product/0553593714"><img ng-src="http://images.amazon.com/images/P/0553593714.01.ZTZZZZZZ.jpg" alt="Cover of Book Title" class="full"></a>
+                <a href="http://www.amazon.com/gp/product/{{book.isbn}}"><img ng-src="http://images.amazon.com/images/P/{{book.isbn}}.01.ZTZZZZZZ.jpg" alt="Cover of {{book.title}}" class="full"></a>
 
-                <p class="rating">Some rating/5</p>
+                <p ng-class="{good : book.rating > 3}" class="rating">{{book.rating}}/5</p>
             </aside>
             <!--                                                                                                -->
             <div class="col-sm-9">
-                <h3><a href="http://www.amazon.com/gp/product/0553593714"
-                        >BOOK TITLE</a></h3>
+                <h3><a href="http://www.amazon.com/gp/product/{{book.isbn}}"
+                        >{{book.title}}</a></h3>
 
-                <cite class="text-muted">Written by BOOK AUTHOR</cite>
+                <cite class="text-muted">Written by {{book.author}}</cite>
 
-                <p>REVIEW GOES HERE</p>
+                <p>{{book.review}}</p>
 
 
 
