@@ -4,22 +4,20 @@
 // Declare app level module which depends on filters, and services
 var app = angular.module('readingList', []);
 
-app.controller('ReviewFormController', function(BookDataService) {
-    this.books = BookDataService.getBooks();
-    this.genres = BookDataService.getGenres();
-
-});
-
 app.controller('ReadingListController', function(BookDataService) {
     this.books = BookDataService.getBooks();
     this.genres = BookDataService.getGenres();
+    this.showForm = true;
 
+    this.toggleShowForm = function() {
+        this.showForm = !this.showForm;
+    };
 });
 
 app.directive('reviewForm', function() {
 
     var controller = function() {
-        this.showForm = false;
+        this.book = {genres: {}};
     };
     var linker = function() {};
 
@@ -36,10 +34,15 @@ app.directive('reviewForm', function() {
 });
 
 app.directive('bookGenres', function() {
+    var controller = function() {
 
+    };
     return {
         restrict: 'E',
-        templateUrl: 'partials/book-genres.html'
+        templateUrl: 'partials/book-genres.html',
+        scope: {
+            genres: '='
+        }
     };
 });
 
