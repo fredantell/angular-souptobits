@@ -16,6 +16,19 @@ app.controller('ReadingListController', function(BookDataService) {
 
 });
 
+app.directive('reviewForm', function() {
+
+    var controller = function() {};
+    var linker = function() {};
+
+    return {
+        restrict: 'E',
+        templateUrl: 'partials/review-form.html',
+        controller: controller,
+        controllerAs: 'reviewFormCtrl'
+    };
+});
+
 app.factory('BookDataService', function() {
     var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
 
