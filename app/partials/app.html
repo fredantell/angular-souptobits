@@ -2,9 +2,9 @@
 
 <div class="row" ng-controller="ReadingListController as readingListCtrl">
 
-    <button class="btn btn-default">Create a Review</button>
+    <button class="btn btn-default" ng-click="readingListCtrl.showForm = !readingListCtrl.showForm">{{readingListCtrl.showForm ? "Cancel" : "Create a Review"}}</button>
     <hr />
-    <review-form></review-form>
+    <review-form ng-show="readingListCtrl.showForm"></review-form>
 <!--    <review-form change-review-form="readingListCtrl.changeReviewForm" books="readingListCtrl.books" genres="readingListCtrl.genres" ng-show="readingListCtrl.showForm"></review-form>-->
     <hr />
 

@@ -13,6 +13,7 @@ app.controller('ReviewFormController', function(BookDataService) {
 app.controller('ReadingListController', function(BookDataService) {
     this.books = BookDataService.getBooks();
     this.genres = BookDataService.getGenres();
+    this.showForm = false;
 
 });
 
