@@ -1,0 +1,41 @@
+<h1>Angular Reading List of Awesome</h1>
+
+<div class="row" ng-controller="ReadingListController as readingListCtrl">
+
+    <button class="btn btn-default">Create a Review</button>
+    <hr />
+<!--    <review-form change-review-form="readingListCtrl.changeReviewForm" books="readingListCtrl.books" genres="readingListCtrl.genres" ng-show="readingListCtrl.showForm"></review-form>-->
+    <hr />
+
+    <ul class="list-unstyled col-sm-8">
+        <li class="book row">
+            <!--<book-cover></book-cover>-->
+            <aside class="col-sm-3">
+
+                <a href="http://www.amazon.com/gp/product/0553593714"><img ng-src="http://images.amazon.com/images/P/0553593714.01.ZTZZZZZZ.jpg" alt="Cover of Book Title" class="full"></a>
+
+                <p class="rating">Some rating/5</p>
+            </aside>
+            <!--                                                                                                -->
+            <div class="col-sm-9">
+                <h3><a href="http://www.amazon.com/gp/product/0553593714"
+                        >BOOK TITLE</a></h3>
+
+                <cite class="text-muted">Written by BOOK AUTHOR</cite>
+
+                <p>REVIEW GOES HERE</p>
+
+
+
+<!--                <book-genres genres="book.genres"></book-genres>-->
+                <ul class="list-unstyled">
+                    <li>
+                        <span class="label label-primary">GENRE</span>
+                    </li>
+                </ul>
+
+
+            </div>
+        </li>
+    </ul>
+</div>
