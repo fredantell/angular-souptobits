@@ -18,6 +18,13 @@ app.directive('reviewForm', function() {
 
     var controller = function() {
         this.book = {genres: {}};
+
+        this.addBook = function(form, books) {
+            books.push(this.book);
+            this.book = {genres: {}};
+            form.$setPristine();
+        };
+
     };
     var linker = function() {};
 
@@ -29,6 +36,26 @@ app.directive('reviewForm', function() {
         scope: {
             books: '=',
             genres: '='
+        }
+    };
+});
+
+app.directive('bookReview', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'partials/book-review.html',
+        scope: {
+            book: '='
+        }
+    };
+});
+
+app.directive('bookDetails', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'partials/book-details.html',
+        scope: {
+            book: '='
         }
     };
 });
@@ -50,7 +77,9 @@ app.directive('bookCover', function() {
     return {
         restrict: 'E',
         templateUrl: 'partials/book-cover.html',
-        replace: true
+        scope: {
+            book: '='
+        }
     };
 });
 

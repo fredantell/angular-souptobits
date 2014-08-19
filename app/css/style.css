@@ -60,15 +60,15 @@ book-cover {
     margin-right: 0;
 }
 
-.live-preview > aside, li.book > aside {
+.live-preview aside, li.book aside {
     padding: 0;
 }
 
-.live-preview > aside img, li.book > aside img {
+.live-preview aside img, li.book aside img {
     width: 100%;
 }
 
-.live-preview > aside p, li.book .rating {
+.live-preview aside p, li.book .rating {
     margin: 0 5%;
     padding: 0.1em;
     background-color: #fff;
@@ -80,11 +80,11 @@ book-cover {
     text-align: center;
 }
 
-.live-preview > aside + div > h3, li.book > aside + div > h3 {
+.live-preview aside + div > h3, li.book aside + div > h3 {
     margin-top: 0;
 }
 
-.live-preview > aside + div li, li.book > aside + div li {
+.live-preview aside + div li, li.book > aside + div li {
     float: left;
     margin-right: 1px;
 }

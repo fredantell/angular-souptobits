@@ -1,25 +1,6 @@
-<form name="reviewForm" class="form-horizontal">
-     <section class="row well live-preview">
-        <aside class="col-sm-3">
-            <a href="http://www.amazon.com/gp/product/{{reviewFormCtrl.book.isbn}}">
-                <img ng-src="http://images.amazon.com/images/P/{{reviewFormCtrl.book.isbn}}.01.ZTZZZZZZ.jpg" alt="Cover of {{reviewFormCtrl.book.title}}" class="full">
-            </a>
-            <p>{{reviewFormCtrl.book.rating}}/5</p>
-        </aside>
-
-        <div class="col-sm-9">
-            <h3>
-                <a href="http://www.amazon.com/gp/product/{{reviewFormCtrl.book.isbn}}">
-                    {{reviewFormCtrl.book.title}}
-                </a>
-            </h3>
-            <cite class="text-muted">Written by {{reviewFormCtrl.book.author}}</cite>
-
-            <p>{{reviewFormCtrl.book.review}}</p>
-
-            <book-genres genres="reviewFormCtrl.book.genres"></book-genres>
-
-        </div>
+<form name="reviewForm" class="form-horizontal" ng-submit="reviewFormCtrl.addBook(reviewForm, books)">
+     <section class="row well live-preview" ng-show="reviewFormCtrl.book.isbn">
+         <book-review book="reviewFormCtrl.book"></book-review>
     </section>
 
     <div class="input-container">
@@ -72,16 +53,6 @@
             <div class="genre">
                 <label ng-repeat="genre in genres" for="{{genre}}" class="genre-label form-control">
                     <input ng-model="reviewFormCtrl.book.genres[genre]" type="checkbox" name="genre" id="{{genre}}"/>
-                    {{genre}}
-                </label>
-            </div>
-        </fieldset>
-
-        <fieldset class="form-group">
-            <label class="control-label col-sm-2" >Genre:</label>
-            <div class="genre">
-                <label ng-repeat="genre in genres" for="{{genre}}" class="genre-label form-control">
-                    <input type="checkbox" name="genre" id="{{genre}}" ng-model="reviewFormCtrl.book.genres[genre]" />
                     {{genre}}
                 </label>
             </div>
